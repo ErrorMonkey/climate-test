@@ -5,11 +5,11 @@ import { useState } from 'react';
 import questions from './assets/questions';
 
 export default function Home() {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
 
-  const handleAnswerOptionClick = (isCorrect): number | null => {
+  const handleAnswerOptionClick = (isCorrect: boolean) => {
     if (isCorrect) {
       setScore(score + 1);
     }
