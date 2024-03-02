@@ -37,7 +37,7 @@ export default function Home() {
             <div className='question-count'>
               <span>Question {currentQuestion + 1}</span>/{questions.length}
             </div>
-            <div className='question-text text-4xl font-bold'>
+            <div className='question-text text-4xl font-bold break-keep leading-20 w-[500px]'>
               {questions[currentQuestion].questionText}
             </div>
           </div>
@@ -45,8 +45,8 @@ export default function Home() {
             {questions[currentQuestion].answerOptions.map(
               (answerOption, index) => (
                 <button
-                  className='w-200 bg-white text-black p-3 rounded-lg shadow-lg
-                  hover:bg-blue-100 transition-colors duration-300 ease-in-out'
+                  className='w-200 bg-white text-black p-3 rounded-lg font-md shadow-sm
+                  hover:text-blue-500 hover:font-bold hover:shadow-lg transition-all duration-300 ease-in-out hover:animate-clicked '
                   onClick={() =>
                     handleAnswerOptionClick(answerOption.isCorrect)
                   }
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
           <div className='etc-func'>
             <button
-              className='bg-yellow-100 p-3 text-md rounded-md shadow-md'
+              className='bg-slate-300 p-3 text-md rounded-md shadow-md'
               onClick={goBack}
             >
               뒤로 가기
